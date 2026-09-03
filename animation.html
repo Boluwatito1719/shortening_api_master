@@ -1,0 +1,188 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fade Up Animation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 100px 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            max-width: 600px;
+            text-align: center;
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /*
+            FADE UP ANIMATION
+
+            Before the element enters the screen:
+            - invisible
+            - 50px lower
+        */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        /*
+            When JavaScript adds "show":
+            - becomes visible
+            - moves back to its normal position
+        */
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- First screen -->
+    <div class="hero">
+        <h1>Scroll Down 👇</h1>
+    </div>
+
+
+    <!-- First animated section -->
+    <section>
+        <div class="content fade-up">
+            <h2>About Us</h2>
+
+            <p>
+                This section fades in and moves upward when
+                you scroll down and it enters the screen.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Second animated section -->
+    <section>
+        <div class="content fade-up">
+            <h2>Our Services</h2>
+
+            <p>
+                This is another section. Keep scrolling and
+                watch it smoothly come up.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Third animated section -->
+    <section>
+        <div class="content fade-up">
+            <h2>Our Projects</h2>
+
+            <p>
+                You can use this animation on cards,
+                images, headings, buttons, and other elements.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Fourth animated section -->
+    <section>
+        <div class="content fade-up">
+            <h2>Contact Us</h2>
+
+            <p>
+                The animation works automatically whenever
+                the element enters the screen.
+            </p>
+        </div>
+    </section>
+
+
+    <script>
+
+        // Select all elements with the "fade-up" class
+        const elements = document.querySelectorAll(".fade-up");
+
+
+        // Create the Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach((entry) => {
+
+                // Check if the element has entered the screen
+                if (entry.isIntersecting) {
+
+                    // Add the "show" class
+                    entry.target.classList.add("show");
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.2
+        });
+
+
+        // Tell the observer to watch every fade-up element
+        elements.forEach((element) => {
+            observer.observe(element);
+        });
+
+    </script>
+
+</body>
+</html>
+```

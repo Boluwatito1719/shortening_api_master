@@ -1,0 +1,21 @@
+#checklist {
+  list-style-type: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+/* Red state for unfulfilled rules */
+.invalid {
+  color: #dc3545; 
+}
+.invalid::before {
+  content: "❌ ";
+}
+
+/* Green state for fulfilled rules */
+.valid {
+  color: #198754;
+}
+.valid::before {
+  content: "✓ ";
+}
