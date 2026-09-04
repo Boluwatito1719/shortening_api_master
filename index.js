@@ -27,20 +27,28 @@ function theboxed(dataUrl) {
         theShow.classList.remove("hidden");
 
         theShow.innerHTML += `
-            <div class="w-[78%] mx-auto bg-white h-13 p-2 rounded mt-3">
-                <div class="flex items-center justify-center">
-                    <h1 class="text-black w-10 text-balance text-pretty">
-                        ${theInput.value}
-                    </h1>
-                    <h1 class="ms-auto text-[hsl(180,96%,29%)] w-[30%]">
-                        ${dataUrl}
-                    </h1>
-                    <button class="bg-[hsl(180,66%,49%)] rounded p-1 px-4 copied">
-                       <span class="material-symbols-outlined">content_copy</span>
-                    </button>
-                </div>
-            </div>
-        `;
+<div class="w-full max-w-4xl mx-auto bg-white p-3 md:p-4 rounded-lg mt-3 shadow-sm">
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+    
+    <!-- Input Value / Original Text -->
+    <h1 class="text-black text-sm md:text-base font-medium break-all flex-1">
+      ${theInput.value}
+    </h1>
+    
+    <!-- Shortened Data URL -->
+    <h1 class="text-[hsl(180,96%,29%)] text-sm md:text-base font-semibold break-all sm:text-right max-w-xs">
+      ${dataUrl}
+    </h1>
+    
+    <!-- Copy Button -->
+    <button class="bg-[hsl(180,66%,49%)] hover:bg-[hsl(180,66%,40%)] text-white rounded-md p-2 flex items-center justify-center transition-colors sm:w-auto w-full copied">
+      <span class="material-symbols-outlined text-lg">content_copy</span>
+    </button>
+
+  </div>
+</div>
+`;
+
 
         let copied = document.querySelectorAll(".copied");
         copied.forEach((button) => {
