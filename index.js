@@ -97,24 +97,16 @@ theInput.addEventListener("keydown", (e) => {
 });
 
 mySubmit.addEventListener("click", (e) => {
+    if (clicks >= 2) { return; } clicks++; console.log(`Click ${clicks}`); if (clicks === 1) { mySubmit.disabled = true; setTimeout(() => { clicks = 0; mySubmit.disabled = false; console.log("You can click again!"); }, 25000); }
     e.preventDefault();
-
-    if (clicks >= 2) {
-        return;
-    }
-
-    clicks++;
-    console.log(`Click ${clicks}`);
-
-    if (clicks === 1) {
-        mySubmit.disabled = true;
-        setTimeout(() => {
-            clicks = 0;
-            mySubmit.disabled = false;
-            console.log("You can click again!");
-        }, 25000);
-    }
-
-    shorten(theInput.value);
+    setTimeout(()=>{
+        mySubmit.innerHTML = `<span class="material-symbols-outlined animate-spin">autorenew</span>`;
+    },500)
+    setTimeout(()=>{
+        mySubmit.innerHTML=` Shorten it!`
+        shorten(theInput.value)
+      
+    },3000);
+    
 });
 
