@@ -11,6 +11,9 @@ let close = document.getElementById("close");
 hambuger.addEventListener("click", () => { 
     menu.classList.toggle("hidden"); 
 }); 
+close.addEventListener("click",()=>{
+    menu.classList.add("hidden")
+})
 
 // Helper function to append URL templates and manage individual click actions safely
 function theboxed(longUrl, dataUrl) { 
