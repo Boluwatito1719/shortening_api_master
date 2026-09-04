@@ -87,12 +87,18 @@ const shorten = async (longUrl) => {
         
         const data = await res.json(); 
         console.log("API Response Object:", data); 
+
+          if (res.status === 400) {
+                errorMessage.textContent = "Bad Request: Check your URL format.";
+                alert("No internet connection")
+                return
+            }
         
         if (!res.ok) { 
-            console.log(`Error: ${res.status}`); 
-            alert("Something went wrong with the link creation. Try again.");
-            return; 
-        } 
+            console.log(`Error Status: ${res.status}`); 
+            return
+          
+        }
         
         // FIXED: Using "data" instead of "result"
         if (data && data.data && data.data.tiny_url) {
@@ -131,9 +137,9 @@ mySubmit.addEventListener("click", (e) => {
         mySubmit.innerHTML = `Shorten it!`; 
         shorten(theInput.value); 
         
-        // Re-enable after API action simulation delay
+    
         clicks = 0; 
         mySubmit.disabled = false; 
         console.log("You can click again!"); 
-    }, 3000); 
+    }, 2500); 
 });
