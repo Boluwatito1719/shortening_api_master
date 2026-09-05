@@ -4,6 +4,13 @@ const anima=document.getElementById("anima")
 
 loginForm.addEventListener("submit", async function (event) {
 
+  window.addEventListener("online", () => {
+    message.textContent="Internet connection restored";
+});
+
+window.addEventListener("offline", () => {
+     message.textContent="You are offline";
+});
   event.preventDefault();
 
   
