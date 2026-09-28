@@ -4,16 +4,51 @@ let clicks = 0;
 let theShow = document.querySelector(".theShow"); 
 let errorMessage = document.getElementById("errorMessage"); 
 let hambuger = document.getElementById("hambuger"); 
+let loading= document.getElementById("loading")
 let menu = document.getElementById("menu");
 let close = document.getElementById("close"); 
+let login=document.getElementById("login")
+let sign=document.getElementById("sign")
 
 // Mobile Menu Toggle
 hambuger.addEventListener("click", () => { 
     menu.classList.toggle("hidden"); 
 }); 
+
+
 close.addEventListener("click",()=>{
     menu.classList.add("hidden")
 })
+
+sign.addEventListener("click",()=>{
+
+    loading.classList.remove("hidden")
+
+  
+  
+  setTimeout(()=>{
+    loading.classList.add("hidden");
+     window.location.href = "sign.html";
+  },5000)
+})
+
+login.addEventListener("click",()=>{
+
+    loading.classList.remove("hidden")
+
+  
+  
+  setTimeout(()=>{
+    loading.classList.add("hidden");
+     window.location.href = "login.html";
+  },5000)
+})
+
+
+
+
+
+
 
 // Helper function to append URL templates and manage individual click actions safely
 function theboxed(longUrl, dataUrl) { 
@@ -74,75 +109,75 @@ const shorten = async (longUrl) => {
         return;
     }
 
-    const apiUrl = "https://api.tinyurl.com/create"; 
-    const apiToken = "A2eD35Z8Pb0n9EhAB8fk3DgOPUv13pQreOsvFlq4Cc7g48EH41FfCr7HDsFF"; 
-    
-    try { 
-        const res = await fetch(apiUrl, { 
-            method: "POST", 
-            headers: { 
-                "Authorization": `Bearer ${apiToken}`, 
-                "Content-Type": "application/json", 
-                "Accept": "application/json" 
-            }, 
-            body: JSON.stringify({ url: longUrl, domain: "tinyurl.com" }) 
-        }); 
-        
-        const data = await res.json(); 
-        console.log("API Response Object:", data); 
-
-          if (res.status === 400) {
-                errorMessage.textContent = "Bad Request: Check your URL format.";
-                alert("No internet connection")
-                return
-            }
-        
-        if (!res.ok) { 
-            console.log(`Error Status: ${res.status}`); 
-            return
-          
-        }
-        
-        // FIXED: Using "data" instead of "result"
-        if (data && data.data && data.data.tiny_url) {
-            theboxed(longUrl, data.data.tiny_url); 
-        } else { 
-            console.error("Unexpected response format", data); 
+    const apiUrl = "https://api.tinyurl.com/create";  
+    const apiToken = "A2eD35Z8Pb0n9EhAB8fk3DgOPUv13pQreOsvFlq4Cc7g48EH41FfCr7HDsFF";  
+     
+    try {  
+        const res = await fetch(apiUrl, {  
+            method: "POST",  
+            headers: {  
+                "Authorization": `Bearer ${apiToken}`,  
+                "Content-Type": "application/json",  
+                "Accept": "application/json"  
+            },  
+            body: JSON.stringify({ url: longUrl, domain: "tinyurl.com" })  
+        });  
+         
+        const data = await res.json();  
+        console.log("API Response Object:", data);  
+ 
+          if (res.status === 400) { 
+                errorMessage.textContent = "Bad Request: Check your URL format."; 
+                alert("No internet connection") 
+                return 
+            } 
+         
+        if (!res.ok) {  
+            console.log(`Error Status: ${res.status}`);  
+            return 
+           
         } 
-    } catch (error) { 
-        console.log("Fetch error:", error); 
-    } 
-}; 
-
-// Enter key trigger
-theInput.addEventListener("keydown", (e) => { 
-    if (e.key === "Enter") { 
-        e.preventDefault(); 
-        shorten(theInput.value); 
-    } 
+         
+        // FIXED: Using "data" instead of "result" 
+        if (data && data.data && data.data.tiny_url) { 
+            theboxed(longUrl, data.data.tiny_url);  
+        } else {  
+            console.error("Unexpected response format", data);  
+        }  
+    } catch (error) {  
+        console.log("Fetch error:", error);  
+    }  
+};  
+ 
+// Enter key trigger 
+theInput.addEventListener("keydown", (e) => {  
+    if (e.key === "Enter") {  
+        e.preventDefault();  
+        shorten(theInput.value);  
+    }  
+});  
+ 
+// Form submit trigger with debouncer 
+mySubmit.addEventListener("click", (e) => {  
+    e.preventDefault(); 
+    if (clicks >= 1) return; // Prevent clicking while loading/disabled 
+ 
+    clicks++;  
+    console.log(`Click ${clicks}`);  
+     
+    mySubmit.disabled = true;  
+     
+    setTimeout(() => {  
+        mySubmit.innerHTML = `<span class="material-symbols-outlined animate-spin">autorenew</span>`;  
+    }, 500);  
+ 
+    setTimeout(() => {  
+        mySubmit.innerHTML = `Shorten it!`;  
+        shorten(theInput.value);  
+         
+     
+        clicks = 0;  
+        mySubmit.disabled = false;  
+        console.log("You can click again!");  
+    }, 2500);  
 }); 
-
-// Form submit trigger with debouncer
-mySubmit.addEventListener("click", (e) => { 
-    e.preventDefault();
-    if (clicks >= 1) return; // Prevent clicking while loading/disabled
-
-    clicks++; 
-    console.log(`Click ${clicks}`); 
-    
-    mySubmit.disabled = true; 
-    
-    setTimeout(() => { 
-        mySubmit.innerHTML = `<span class="material-symbols-outlined animate-spin">autorenew</span>`; 
-    }, 500); 
-
-    setTimeout(() => { 
-        mySubmit.innerHTML = `Shorten it!`; 
-        shorten(theInput.value); 
-        
-    
-        clicks = 0; 
-        mySubmit.disabled = false; 
-        console.log("You can click again!"); 
-    }, 2500); 
-});

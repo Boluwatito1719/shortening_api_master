@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -9,8 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -18,9 +16,9 @@
   <title>Shortly</title>
 </head>
 
-<body class="w-full overflow-x-hidden">
+<body class="w-full overflow-x-hidden ">
 
-  <div class="w-[85%] mx-auto max-xl:w-[90%] max-lg:w-[94%] max-md:w-[96%] max-sm:w-full max-sm:px-4">
+  <div class="w-[85%]  mx-auto max-xl:w-[90%] max-lg:w-[94%] max-md:w-[96%] max-sm:w-full max-sm:px-4">
 
     <!-- NAV -->
     <nav class="flex items-center py-4">
@@ -35,13 +33,11 @@
       </button>
 
       <!-- Mobile menu -->
-      <div
-        class="bg-white fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-        w-[90%] max-w-[400px] p-8 rounded-xl shadow-xl z-50 text-center hidden"
-        id="menu">
-               <span class="material-symbols-outlined absolute top-4 right-4 cursor-pointer" id="close">
-close
-</span>
+      <div class="bg-white fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        w-[90%] max-w-[400px] p-8 rounded-xl shadow-xl z-50 text-center hidden" id="menu">
+        <span class="material-symbols-outlined absolute top-4 right-4 cursor-pointer" id="close">
+          close
+        </span>
 
         <ul class="text-gray-600 font-medium text-2xl flex flex-col gap-5">
           <li>Features</li>
@@ -50,8 +46,8 @@ close
 
           <hr class="my-3">
 
-          <button class="text-[hsl(180,66%,49%)]">
-            <a href="login.html">Login</a>
+          <button class="text-[hsl(180,66%,49%)]" >
+            <a href="login.html" >Login</a>
           </button>
 
           <button class="bg-[hsl(180,66%,49%)] text-white px-3 py-2 rounded-full">
@@ -62,22 +58,31 @@ close
 
       <!-- Desktop -->
       <div class="flex flex-1 justify-between items-center ms-10 max-md:hidden">
-  
-        
+
+
 
         <ul class="flex gap-6 text-gray-600 font-medium  ">
-          <li class="hover:text-[hsl(180,66%,49%)] duration-300 transition ease-in-out border-transparent hover:border-b-[hsl(180,66%,49%)] border-2 cursor-pointer active:text-[hsl(180,66%,29%)]">Features</li>
-          <li class="hover:text-[hsl(180,66%,49%)] duration-300 transition ease-in-out border-transparent hover:border-b-[hsl(180,66%,49%)] border-2 cursor-pointer active:text-[hsl(180,66%,29%)]">Pricing</li>
-          <li class="hover:text-[hsl(180,66%,49%)] duration-300 transition ease-in-out border-transparent hover:border-b-[hsl(180,66%,49%)] border-2 cursor-pointer   active:text-[hsl(180,66%,29%)]">Resources</li>
+          <li id="features"
+            class="hover:text-[hsl(180,66%,49%)] duration-300 transition ease-in-out border-transparent hover:border-b-[hsl(180,66%,49%)] border-2 cursor-pointer active:text-[hsl(180,66%,29%)]">
+            Features</li>
+          <li
+            class="hover:text-[hsl(180,66%,49%)] duration-300 transition ease-in-out border-transparent hover:border-b-[hsl(180,66%,49%)] border-2 cursor-pointer active:text-[hsl(180,66%,29%)]">
+            Pricing</li>
+          <li
+            class="hover:text-[hsl(180,66%,49%)] duration-300 transition ease-in-out border-transparent hover:border-b-[hsl(180,66%,49%)] border-2 cursor-pointer   active:text-[hsl(180,66%,29%)]">
+            Resources</li>
         </ul>
 
         <div class="flex gap-4 items-center">
-          <button class="text-gray-600 hover:text-[hsl(180,66%,49%)] duration-300 transition ease-in-out border-transparent hover:border-b-[hsl(180,66%,49%)] border-2 active:text-[hsl(180,66%,29%)]">
-            <a href="login.html">Login</a>
-          </button>
+          <button
+    class="text-gray-600 hover:text-[hsl(180,66%,49%)] duration-300 transition ease-in-out border-transparent hover:border-b-[hsl(180,66%,49%)] border-2 active:text-[hsl(180,66%,29%)]"
+    id="login">
+    Login
+</button>
 
-          <button class="bg-[hsl(180,66%,49%)] hover:rounded-tr-xs hover:scale-110 duration-500 transition text-white px-4 py-2 rounded-full  hover:bg-[hsl(180,66%,59%)]  active:bg-[hsl(180,66%,29%)]">
-            <a href="sign.html">Sign Up</a>
+          <button
+            class="bg-[hsl(180,66%,49%)] hover:rounded-tr-xs hover:scale-110 duration-500 transition text-white px-4 py-2 rounded-full  hover:bg-[hsl(180,66%,59%)]  active:bg-[hsl(180,66%,29%)]" id="sign">
+            Sign Up
           </button>
         </div>
 
@@ -99,16 +104,16 @@ close
           your links are performing.
         </h4>
 
-      <a href="sign.html" class="inline-block mt-7 px-10 py-2 bg-[hsl(180,66%,49%)] rounded-full font-medium text-white hover:rounded-tr-xs hover:scale-110 duration-500 transition cursor-pointer hover:bg-[hsl(180,66%,59%)] active:bg-[hsl(180,66%,29%)]">
-  Get started
-</a>
+        <a href="sign.html"
+          class="inline-block mt-7 px-10 py-2 bg-[hsl(180,66%,49%)] rounded-full font-medium text-white hover:rounded-tr-xs hover:scale-110 duration-500 transition cursor-pointer hover:bg-[hsl(180,66%,59%)] active:bg-[hsl(180,66%,29%)]">
+          Get started
+        </a>
 
 
       </div>
 
       <div class="max-md:mt-4">
-        <img src="images/illustration-working.svg"
-          class="w-full max-w-[600px] mx-auto">
+        <img src="images/illustration-working.svg" class="w-full max-w-[600px] mx-auto">
       </div>
 
     </div>
@@ -120,32 +125,15 @@ close
       <!-- SHORTENER -->
       <div class="mt-10 max-md:mt-7">
 
-        <div id="features"
-          class="bg-[url('images/bg-boost-desktop.svg')]
+        <div  class="bg-[url('images/bg-boost-desktop.svg')]
           rounded min-h-29 bg-[hsl(257,27%,26%)] bg-cover bg-center
           flex items-center justify-center p-5
           max-md:bg-[url('images/bg-shorten-mobile.svg')]">
 
-          <div class="flex w-full max-w-xl px-4 gap-4 max-md:px-0 max-md:flex-col">
-
-            <input type="text"
-              class="w-full min-w-0 bg-white px-4 py-3 rounded-lg"
-              id="theInput"
-              placeholder="Shorten a link here">
-
-            <button
-              class="text-white w-40 shrink-0 bg-[hsl(180,66%,49%)]
-              rounded-xl py-3 max-md:w-full  hover:bg-[hsl(180,66%,59%)] hover:rounded-tr-xs hover:scale-110 duration-500 transition cursor-pointer  active:bg-[hsl(180,66%,29%)]"
-              id="myForm">
-              Shorten it!
-            </button>
-
-          </div>
+              <div class="text-4xl font-medium text-white">Turn long URLs into short, shareable links</div>
         </div>
 
-        <h1
-          class="text-red-600 w-[45%] mx-auto hidden max-md:w-[90%]"
-          id="errorMessage">
+        <h1 class="text-red-600 w-[45%] mx-auto hidden max-md:w-[90%]" id="errorMessage">
           please add a link
         </h1>
 
@@ -159,8 +147,7 @@ close
       <!-- STATISTICS -->
       <div class="pt-15 pb-10">
 
-        <div
-          class="w-[40%] mx-auto mt-20 font-[Poppins]
+        <div class="w-[40%] mx-auto mt-20 font-[Poppins]
           max-lg:w-[60%] max-md:w-[80%] max-sm:w-[95%]">
 
           <h1 class="text-center text-3xl font-bold max-sm:text-2xl">
@@ -176,18 +163,15 @@ close
 
 
         <!-- CARDS -->
-        <div
-          class="flex gap-10 w-[90%] mx-auto mt-10
+        <div class="flex gap-10 w-[90%] mx-auto mt-10
           max-lg:w-full max-lg:gap-5
           max-md:flex-col max-md:items-center">
 
           <!-- CARD 1 -->
-          <div
-            class="bg-white p-5 rounded-xl w-70 flex-1 h-fit
+          <div class="bg-white p-5 rounded-xl w-70 flex-1 h-fit
             max-md:w-full max-md:max-w-[350px]">
 
-            <img src="images/icon-brand-recognition.svg"
-              class="p-1 rounded-full bg-[hsl(257,27%,26%)] ms-5">
+            <img src="images/icon-brand-recognition.svg" class="p-1 rounded-full bg-[hsl(257,27%,26%)] ms-5">
 
             <h1 class="text-xl font-[Poppins] font-bold mt-5">
               Brand recognition
@@ -202,12 +186,10 @@ close
 
 
           <!-- CARD 2 -->
-          <div
-            class="bg-white p-5 w-70 flex-1 rounded-xl h-fit mt-10
+          <div class="bg-white p-5 w-70 flex-1 rounded-xl h-fit mt-10
             max-md:mt-0 max-md:w-full max-md:max-w-[350px]">
 
-            <img src="images/icon-detailed-records.svg"
-              class="p-1 rounded-full bg-[hsl(257,27%,26%)] ms-5">
+            <img src="images/icon-detailed-records.svg" class="p-1 rounded-full bg-[hsl(257,27%,26%)] ms-5">
 
             <h1 class="text-xl font-[Poppins] mt-5 font-bold">
               Detailed Records
@@ -222,12 +204,10 @@ close
 
 
           <!-- CARD 3 -->
-          <div
-            class="bg-white p-5 rounded-xl w-70 flex-1 h-fit mt-20
+          <div class="bg-white p-5 rounded-xl w-70 flex-1 h-fit mt-20
             max-md:mt-0 max-md:w-full max-md:max-w-[350px]">
 
-            <img src="images/icon-fully-customizable.svg"
-              class="p-1 rounded-full bg-[hsl(257,27%,26%)] ms-5">
+            <img src="images/icon-fully-customizable.svg" class="p-1 rounded-full bg-[hsl(257,27%,26%)] ms-5">
 
             <h1 class="text-xl font-[Poppins] mt-5 font-bold">
               Fully Customizable
@@ -246,8 +226,7 @@ close
 
 
       <!-- BOOST -->
-      <div
-        class="bg-[url('images/bg-shorten-desktop.svg')]
+      <div class="bg-[url('images/bg-shorten-desktop.svg')]
         min-h-39 bg-[hsl(257,27%,26%)] bg-cover bg-center
         text-center mt-10 px-4
         max-md:bg-[url('images/bg-shorten-mobile.svg')]">
@@ -270,8 +249,7 @@ close
       <!-- FOOTER -->
       <div class="bg-black min-h-70 font-[Poppins]">
 
-        <div
-          class="flex bg-black min-h-70 w-[90%] p-10 mx-auto
+        <div class="flex bg-black min-h-70 w-[90%] p-10 mx-auto
           max-md:w-full max-md:flex-col max-md:items-center
           max-md:text-center max-md:gap-8">
 
@@ -319,12 +297,35 @@ close
       </div>
 
     </div>
+
+  
+    <div
+      id="loading"
+      class=" hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center"
+    >
+
+      <div class="bg-white rounded-xl p-6 text-center">
+
+        <div
+          class="animate-spin rounded-full h-10 w-10 border-4 border-blue-500 border-t-transparent mx-auto"
+        ></div>
+
+        <p class="mt-4 text-gray-700">
+          please wait...
+        </p>
+
+      </div>
+
+    </div>
+
   </div>
+
+    
 
 
 
   <script src="index.js"></script>
 
 </body>
-</html>
 
+</html>
