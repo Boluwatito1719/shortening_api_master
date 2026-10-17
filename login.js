@@ -49,9 +49,7 @@ window.addEventListener("offline", () => {
 });
 
 
-// ===============================
-// LOGIN
-// ===============================
+
 
 loginForm.addEventListener("submit", async function (event) {
 
@@ -141,22 +139,17 @@ loginForm.addEventListener("submit", async function (event) {
     localStorage.setItem("userName", name);
 
 
-        // ===============================
-        // SAVE USERNAME
-        // ===============================
+
 
         const firstName =
-            data.data.user.first_name;
+            data.data.user.first_name.charAt(0).toUpperCase()+
+             data.data.user.first_name.slice(1);
 
         localStorage.setItem(
             "username",
             firstName
         );
 
-
-        // ===============================
-        // REDIRECT
-        // ===============================
 
         setTimeout(() => {
 

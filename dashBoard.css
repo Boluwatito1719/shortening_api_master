@@ -1,0 +1,22 @@
+/* style.css */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Fallback base styles for standard elements if Tailwind engine drops out */
+.hidden {
+  display: none !important;
+}
+
+.break-all {
+  word-break: break-all;
+}
