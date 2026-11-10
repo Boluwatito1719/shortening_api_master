@@ -3,6 +3,16 @@ const name = localStorage.getItem("userName") || localStorage.getItem("username"
 const sign = document.getElementById("sign");
 const loading = document.getElementById("loading");
 
+const feature=document.getElementById("feature")
+
+feature.addEventListener("click",()=>{
+    loading.classList.remove("hidden");
+        setTimeout(() => {
+            loading.classList.add("hidden");
+            window.location.href = "features.html";
+        }, 3000)
+})
+
 if (sign && loading) {
     sign.addEventListener("click", () => {
         loading.classList.remove("hidden");
@@ -12,6 +22,8 @@ if (sign && loading) {
         }, 4000);
     });
 }
+
+
 
 // Safely update welcome messages without breaking if one is missing in HTML
 const welcomeLower = document.getElementById("welcome");
